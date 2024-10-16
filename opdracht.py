@@ -9,8 +9,8 @@ patronen = {
    "Ik heb een klacht over(.*)":"MCDEWERKER: Je hebt dus een klacht over {}?,
    "Ik vind het eten(.*)":"MCDEWERKER: Dus je vind het eten {}?",
    "Het ruikt hier naar (.*)":"MCDEWERKER: Ja? Ik ruik niet echt de geur van {}",
-   "Jullie maken alles te (.*)":"MCDEWERKER: Oh echt? Dat is dan alleen uw mening, ik vind het niet zo {}"
-   "Ik weet niet of ik hier nog eens kom, mijn ervaring was redelijk (.*)"
+   "Jullie maken alles te (.*)":"MCDEWERKER: Oh echt? Dat is dan alleen uw mening, ik vind het niet zo {}",
+   "Ik weet niet of ik hier nog eens kom, mijn ervaring was redelijk (.*)":"MCDEWERKER: Oh, oke, bedankt voor het komen, al was het {}"
 
 
 # Dictionary voor veelvoorkomende berichten.
@@ -52,10 +52,10 @@ def krijg_antwoord_patroon(bericht):
         if match: 
             return patterns[pattern].format(match.group(1))
     
-    if vraag in antwoorden: 
-        return random.choice(antwoorden[vraag])
+    if bericht in antwoorden: 
+        return random.choice(antwoorden[bericht])
     else: 
-        return "MCDEWERKER: IK hoor je, je zei: " + vraag 
+        return "MCDEWERKER: IK hoor je, je zei: " + bericht 
   
 
   
@@ -63,13 +63,9 @@ def krijg_antwoord_patroon(bericht):
   # en return dit antwoord als het is gevonden.
   # Als het niet is gevonden, dan zegt de bot jou na.
 
-  if bericht in antwoorden:
-      # hint: lees hoofdstuk 2.2 en hoofdstuk 3.3
-      return "Hier komt het antwoord van de chatbot uit de responses dictionary"
-  else:
-      return "Ik begrijp je niet, kan je je vraag opnieuw stellen?"
+
 
 while True:
   bericht = input("YOU: ")
-  antwoord = krijg_antwoord(bericht)
+  antwoord = krijg_antwoord_patroon(bericht)
   print("Bot: " + antwoord)

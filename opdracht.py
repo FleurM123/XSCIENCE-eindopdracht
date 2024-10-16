@@ -4,7 +4,7 @@ import random
 
 # Dictionary voor patronen.
 patronen = { 
-   "ik heb een vraag over (.*)":"MCDEWERKER: Oke!, je hebt een vraag over {}", 
+   "Ik heb een vraag over (.*)":"MCDEWERKER: Oke!, je hebt een vraag over {}", 
    "Ik vind de McDonalds(.*)":"MCDEWERKER: Dus je vind de McDonalds {}?",
    "Ik heb een klacht over(.*)":"MCDEWERKER: Je hebt dus een klacht over {}?,
    "Ik vind het eten(.*)":"MCDEWERKER: Dus je vind het eten {}?",

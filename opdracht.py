@@ -12,7 +12,7 @@ patronen = {
 antwoorden = {
   "Hallo": ["MCDEWERKER: Hallo, hoe gaat het met jou?", "MCDEWERKER: Hoi!, hoe gaat het?", "MCDEWERKER: Hallo!"],
   "Hoe gaat het?": ["MCDEWERKER: Het gaat goed, bedankt!", "MCDEWERKER: Het gaat prima, met jou?", "MCDEWERKER: Goed hoor"],
-  "Goed": ["MCDWERKER: Fijn om te horen!", "MCDEWERKER: Gelukkig maar, een goed humeur voor een heerlijke port!", "MCDEWERKER: Fijn dat het goed met je gaat!"],
+  "Goed": ["MCDWERKER: Fijn om te horen!", "MCDEWERKER: Gelukkig maar, een goed humeur voor een heerlijke portie!", "MCDEWERKER: Fijn dat het goed met je gaat!"],
   "Wat is er?": ["MCDEWERKER: Er is niks", "MCDEWERKER: Jawel maar het is niks ergs", "MCDEWERKER: Niks eigenlijk"],
   "Ik heb een vraag": ["MCDEWERKER: Ik ben benieuwd, wat is je vraag?", "MCDEWERKER: Wat is je vraag?", "MCDEWERKER: Vertel, ik zal het zo goed mogelijk proberen te beantwoorden"],
   "Waarom duurt het zo lang voordat ik mijn ijsje krijg?": ["MCDEWERKER: De ijsmachine wordt nu gerepareerd, hij is een eeuw kapot geweest", "MCDEWERKER: Dat kan u niet bestelt hebben, de machine is stuk", "Wees geduldig beste klant, we doen ons best, u hoeft nog maar drieduizend jaar te wachten, dan is de ijsmachine weer gerepareerd."]

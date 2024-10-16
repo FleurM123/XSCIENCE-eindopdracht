@@ -12,7 +12,7 @@ patronen = {
    "Jullie maken alles te (.*)":"MCDEWERKER: Oh echt? Dat is dan alleen uw mening, ik vind het niet zo {}",
    "Ik weet niet of ik hier nog eens kom, mijn ervaring was redelijk (.*)":"MCDEWERKER: Oh, oke, bedankt voor het komen, al was het {}"
 
-
+}
 # Dictionary voor veelvoorkomende berichten.
 
 antwoorden = {

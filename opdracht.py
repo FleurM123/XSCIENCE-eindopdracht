@@ -5,8 +5,13 @@ import random
 # Dictionary voor patronen.
 patronen = { 
    "ik heb een vraag over (.*)":"MCDEWERKER: Oke!, je hebt een vraag over {}", 
-   "Ik vind de macdonalds(.*)":"MCDEWERKER: Dus je vind de macdonalds {}?",
-   "Ik heb een klacht over(.*)":"MCDEWERKER: Je hebt dus een klacht over " 
+   "Ik vind de McDonalds(.*)":"MCDEWERKER: Dus je vind de McDonalds {}?",
+   "Ik heb een klacht over(.*)":"MCDEWERKER: Je hebt dus een klacht over {}?,
+   "Ik vind het eten(.*)":"MCDEWERKER: Dus je vind het eten {}?",
+   "Het ruikt hier naar (.*)":"MCDEWERKER: Ja? Ik ruik niet echt de geur van {}",
+   "Jullie maken alles te (.*)":"MCDEWERKER: Oh echt? Dat is dan alleen uw mening, ik vind het niet zo {}"
+   "Ik weet niet of ik hier nog eens kom, mijn ervaring was redelijk (.*)"
+
 
 # Dictionary voor veelvoorkomende berichten.
 
@@ -20,7 +25,7 @@ antwoorden = {
   "Waarom duurt het zo lang voordat ik mijn ijsje krijg?": ["MCDEWERKER: De ijsmachine wordt nu gerepareerd, hij is een eeuw kapot geweest", "MCDEWERKER: Dat kan u niet bestelt hebben, de machine is stuk", "Wees geduldig beste klant, we doen ons best, u hoeft nog maar drieduizend jaar te wachten, dan is de ijsmachine weer gerepareerd."],
   "Ik ben zo boos! Jullie moeten sluiten! Nu meteen!": ["MCDEWERKER: Oh nee he, niet weer zo'n karen...", "MCDEWERKER: Wat is er mis?", "MCDEWERKER: Vertel eens, waarom uit u ineens zo'n haat naar ons?"],
   "Mijn kind had hier kipnuggets vandaan gehaald en toen m'n lieve kindje die gisteren at werd het arme kind ziek! Hier is het bonnetje voor bewijs!": ["MCDEWERKER: Daar kunnen wij echt niets aan doen, kijk goed, die kipnuggets zijn van vijf jaar geleden.", "MCDEWERKER: Oke, dit kan me niks schelen, veel plezier met een ziek kind en verbannen zijn uit de McDonald's.", "MCDEWERKER: Nou hier zijn wat medicijnen, hopelijk wordt uw kind beter."],
-  ""
+  "Ik heb een klacht!": ["MCDEWERKER: Wat is uw klacht?"]
   
 }
 
@@ -39,23 +44,21 @@ def krijg_antwoord(vraag):
 
 
 def krijg_antwoord_patroon(bericht):
-  # Zoek een antwoord in de 'patterns' dictionary
-  # en return dit antwoord als het is gevonden.
-  for patroon in patronen: 
-     match = re.search(patroon,bericht) 
-     if match: 
-        break
-  if match       
-  print("BOT: " + "So you feel, " + match.group(1)) 
+    # Zoek een antwoord in de 'patterns' dictionary
+    # en return dit antwoord als het is gevonden. 
+    time.sleep(random.randint(1, 3))
+    for patroon in patronen: 
+        match = re.search(patroon,bericht) 
+        if match: 
+            return patterns[pattern].format(match.group(1))
+    
+    if vraag in antwoorden: 
+        return random.choice(antwoorden[vraag])
+    else: 
+        return "MCDEWERKER: IK hoor je, je zei: " + vraag 
   
-       # hint: patterns[pattern].xxx( ... ) waar xxx een python-functie is.
-       # hint: lees hoofdstuk 4.2
-       return " print("Bot: " + patroon) " 
-  time.sleep(random.randint(1, 3))
-  if vraag in antwoorden: 
-      return random.choice(antwoorden[vraag])
-  else: 
-      return "MCDEWERKER: IK hoor je, je zei: " + vraag 
+
+  
       
   # en return dit antwoord als het is gevonden.
   # Als het niet is gevonden, dan zegt de bot jou na.

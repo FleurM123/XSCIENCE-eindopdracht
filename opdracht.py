@@ -17,15 +17,15 @@ patronen = {
    "Ik weet niet of ik hier nog eens kom, mijn ervaring was redelijk (.*)":"MCDEWERKER: Oh, oke, bedankt voor het komen, al was het {}"
 
 }
-# Dictionary voor veelvoorkomende berichten.
+
 
 antwoorden = {
   "Hallo": ["MCDEWERKER: Hallo, waarvoor komt u?", "MCDEWERKER: Hoi!, hoe gaat het?", "MCDEWERKER: Hallo, hoe kan ik je helpen?"],
   "Hoe gaat het?": ["MCDEWERKER: Het gaat goed, bedankt!", "MCDEWERKER: Het gaat prima, met jou?", "MCDEWERKER: Goed hoor"],
   "Het gaat goed": ["MCDWERKER: Fijn om te horen!", "MCDEWERKER: Gelukkig maar, een goed humeur voor een heerlijke portie McDonald's!", "MCDEWERKER: Wat goed, dan zal je wel een nog grotere glimlach krijgen van een hapje McDonald's!"],
   "Het gaat slecht": ["MCDEWERKER: Wat vervelend, kan ik je opvrolijken met een paar gratis extraatjes?", "MCDEWERKER: Oh, nou geen zorgen, ons eten smaakt heerlijk, binnen no time staat er weer een mooie lach op je gezicht geplakt."],
-  "Wat is er?": ["MCDEWERKER: Er is niks", "MCDEWERKER: Jawel maar het is niks ergs", "MCDEWERKER: Niks eigenlijk"],
-  "Waarom duurt het zo lang?": ["MCDEWERKER: Bent u zo ongeduldig? Even rustig aan hoor!", "MCDEWERKER: Omdat u heel veel besteld hebt en wij ook andere klanten moeten bedienen.", "Omdat u ongeduldig bent en wij dit moeten maken en dat tering veel moeite kost."]
+  "Wat is er?": ["MCDEWERKER: Er is niks", "MCDEWERKER: Het is niks ergs", "MCDEWERKER: Niks eigenlijk"],
+  "Waarom duurt het zo lang?": ["MCDEWERKER: Bent u zo ongeduldig? Even rustig aan hoor!", "MCDEWERKER: Omdat u heel veel besteld hebt en wij ook andere klanten moeten bedienen.", "Omdat u ongeduldig bent en wij dit moeten maken en dat tering veel moeite kost."],
   "Ik heb een vraag": ["MCDEWERKER: Ik ben benieuwd, wat is je vraag?", "MCDEWERKER: Wat is je vraag?", "MCDEWERKER: Vertel, ik zal het zo goed mogelijk proberen te beantwoorden"],
   "Waarom duurt het zo lang voordat ik mijn ijsje krijg?": ["MCDEWERKER: De ijsmachine wordt nu gerepareerd, hij is een eeuw kapot geweest", "MCDEWERKER: Dat kan u niet besteld hebben, de machine is stuk", "Wees geduldig beste klant, we doen ons best, u hoeft nog maar drieduizend jaar te wachten, dan is de ijsmachine weer gerepareerd."],
   "Ik ben zo boos! Jullie moeten sluiten! Nu meteen!": ["MCDEWERKER: Oh nee he, niet weer zo'n karen...", "MCDEWERKER: Wat is er mis?", "MCDEWERKER: Vertel eens, waarom uit u ineens zo'n haat naar ons?"],
@@ -61,11 +61,7 @@ def krijg_antwoord_patroon(bericht):
         return "MCDEWERKER: IK hoor je, je zei: " + bericht 
   
 
-  
       
-
-
-
 while True:
   bericht = input("YOU: ")
   antwoord = krijg_antwoord_patroon(bericht)

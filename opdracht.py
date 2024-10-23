@@ -4,7 +4,17 @@ import random
 import json
 import urllib.request
 
+def mcdonalds_happymeal_jewerly():
+  url = 'https://fakestoreapi.com/products/category/jewelery'
+  response = urllib.request.urlopen(url)
+  result = json.loads(response.read())
+  
+  result = result[0]
+  print(result)
+  happymeal_jewerly= result["title"]
 
+
+mcdonalds_happymeal_jewerly()
 
 
 patronen = { 
@@ -21,7 +31,9 @@ patronen = {
 
 antwoorden = {
   "Hallo": ["MCDEWERKER: Hallo, waarvoor komt u?", "MCDEWERKER: Hoi!, hoe gaat het?", "MCDEWERKER: Hallo, hoe kan ik je helpen?"],
+  "Hey, mag ik gratis eten?": ["MCDEWERKER: NEE! Waarom zou dat wel mogen?", "MCDEWERKER: Nee sorry, gewoon betalen!", "MCDEWERKER: Nope! Absoluut niet! Betalen! En achteraan sluiten, ik zag u de rij skippen!"],
   "Hoe gaat het?": ["MCDEWERKER: Het gaat goed, bedankt!", "MCDEWERKER: Het gaat prima, met jou?", "MCDEWERKER: Goed hoor"],
+  "*Skipt de rij*": ["MCDEWERKER: Dat zag ik!", "MCDEWERKER: NU ACHTERAAN SLUITEN!", "MCDEWERKER: U moet even in de rij gaan staan, iedereen wacht al erg lang, dus u moet dat ook!"],
   "Het gaat goed": ["MCDWERKER: Fijn om te horen!", "MCDEWERKER: Gelukkig maar, een goed humeur voor een heerlijke portie McDonald's!", "MCDEWERKER: Wat goed, dan zal je wel een nog grotere glimlach krijgen van een hapje McDonald's!"],
   "Het gaat slecht": ["MCDEWERKER: Wat vervelend, kan ik je opvrolijken met een paar gratis extraatjes?", "MCDEWERKER: Oh, nou geen zorgen, ons eten smaakt heerlijk, binnen no time staat er weer een mooie lach op je gezicht geplakt."],
   "Wat is er?": ["MCDEWERKER: Er is niks", "MCDEWERKER: Het is niks ergs", "MCDEWERKER: Niks eigenlijk"],
@@ -58,9 +70,9 @@ def krijg_antwoord_patroon(bericht):
     if bericht in antwoorden: 
         return random.choice(antwoorden[bericht])
     else: 
-        return "MCDEWERKER: IK hoor je, je zei: " + bericht 
+        return "MCDEWERKER: Ik hoor je, je zei: " + bericht 
   
-
+[{"id":5,"title":"John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet","price":695,"description":"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.","category":"jewelery","image":"https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":4.6,"count":400}},{"id":6,"title":"Solid Gold Petite Micropave ","price":168,"description":"Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.","category":"jewelery","image":"https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3.9,"count":70}},{"id":7,"title":"White Gold Plated Princess","price":9.99,"description":"Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...","category":"jewelery","image":"https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3,"count":400}},{"id":8,"title":"Pierced Owl Rose Gold Plated Stainless Steel Double","price":10.99,"description":"Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel","category":"jewelery","image":"https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":1.9,"count":100}}]
       
 while True:
   bericht = input("YOU: ")

@@ -1,10 +1,9 @@
 # XSCIENCE-eindopdracht
 
+Ons progamma is Een mcdonalds chatbot
 
 
-
-hoi renske yooooooooooooooooooooooo hij doet het
-
+Fleur Maingay: 140984 & Renske Kloet: 141162 hebben er aan gewerkt
 
 
 

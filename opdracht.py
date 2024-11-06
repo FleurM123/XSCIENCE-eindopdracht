@@ -52,9 +52,9 @@ answers = {
   "Ik haat jullie!": ["MCDEWERKER: Dat kan ons niks schelen, u bent toch lelijk.", "MCDEWERKER: BOEIE! Als u niet meer komt hoeven wij uw oorverdovende piepstem niet meer te horen, u lijkt wel een krijsende baby"],
   "Doe eens even normaal": ["MCDEWERKER: Het spijt me, ik moet inderdaad even normaal doen.", "MCDEWERKER: Oke, ik ga normaal doen.", "MCDEWERKER: Prima, ik doe normaal!!!!!"],
   "Wat zit er in de happy meal?": [ mcdonalds_happymeal_jewerly()],
-  "Waarom mag ik geen ijsje bestellen?": ["MCDEWERKER: Omdat de ijsmachine kapot is, ga maar weg, de McDonald's sluit nu tijdelijk omdat alle Mcdewerkers naar de begrafenis gaan van onze geliefde en gewaardeerde ijsmachine, on"]
+  "Waarom mag ik geen ijsje bestellen?": ["MCDEWERKER: Omdat de ijsmachine kapot is, ga maar weg, de McDonald's sluit nu tijdelijk omdat alle Mcdewerkers naar de begrafenis gaan van onze geliefde en gewaardeerde ijsmachine, ondanks dat we hem nooit wilden helpen beter te worden.", "MCDEWERKER: Uhh onze ijsmachine wordt momenteel een beetje verwaarloosd, hij wordt mishandeld en kapot gemaakt.", "MCDEWERKER: Wij geven niks om onze ijdsmachine en hebben hem mishandeld tot hij kapot ging.", "MCDEWERKER: Arme ijsmachine, hij is al sinds de oertijd kapot en wordt nooit meer gerepareerd want daar hebben wij geen budget voor en we gaan het niet zelf doen."],
+  "Sinds wanneer is de ijsmachine kapot?": ["MCDEWERKER: Nog voor de Big Bang was onze ijsmachine aan het zweven en kromp in elkaar, wij wilden hem genezen maar het was te laat, door de Big Bang ontplofte hij en wij overleefden het.", "MCDEWERKER: Sinds hij gem"],
 }
-
 
 def get_answer(question): 
   if question in answers: 
@@ -64,23 +64,19 @@ def get_answer(question):
       time.sleep(random.randint(1, 3))
       return "IK hoor je, je zei: " + question 
 
-
-
-def proces_answer(message):
-   
-    time.sleep(random.randint(1, 3))
-    for pattern in patterns: 
-        match = re.search(pattern,message) 
-        if match: 
-            return patterns[pattern].format(match.group(1))
-    
-    if message in answers: 
-        return random.choice(answers[message])
-    else: 
-        return "MCDEWERKER: Ik hoor je, je zei: " + message 
+def process_answer(message):  
+  time.sleep(random.randint(1, 3))
+  for pattern in patterns: 
+      match = re.search(pattern,message) 
+      if match: 
+          return patterns[pattern].format(match.group(1))
   
+  if message in answers: 
+      return random.choice(answers[message])
+  else: 
+      return "MCDEWERKER: Ik hoor je, je zei: " + message 
       
 while True:
   message = input("YOU: ")
-  answer = proces_answer(message)
+  answer = process_answer(message)
   print("Bot: " + answer)

@@ -70,6 +70,7 @@ def process_answer(message):
           return patterns[pattern].format(match.group(1))
   
   if message in answers: 
+     time.sleep(random.randint(1, 3)) 
       return random.choice(answers[message])
   else: 
       return "MCDEWERKER: Ik hoor je, je zei: " + message 

@@ -45,13 +45,14 @@ answers = {
   "Wat is er?": ["MCDEWERKER: Er is niks", "MCDEWERKER: Het is niks ergs", "MCDEWERKER: Niks eigenlijk"],
   "Waarom duurt het zo lang?": ["MCDEWERKER: Bent u zo ongeduldig? Even rustig aan hoor!", "MCDEWERKER: Omdat u heel veel besteld hebt en wij ook andere klanten moeten bedienen.", "Omdat u ongeduldig bent en wij dit moeten maken en dat tering veel moeite kost."],
   "Ik heb een vraag": ["MCDEWERKER: Ik ben benieuwd, wat is je vraag?", "MCDEWERKER: Wat is je vraag?", "MCDEWERKER: Vertel, ik zal het zo goed mogelijk proberen te beantwoorden"],
-  "Waarom duurt het zo lang voordat ik mijn ijsje krijg?": ["MCDEWERKER: De ijsmachine wordt nu gerepareerd, hij is al een volledige eeuw of langer kapot geweest", "MCDEWERKER: Dat kan u niet besteld hebben, de machine is al 99.999999999.99 jaar stuk", "Wees geduldig beste klant, we doen ons best, u hoeft nog maar drieduizend jaar te wachten, dan is de ijsmachine weer gerepareerd."],
+  "Waarom duurt het zo lang voordat ik mijn ijsje krijg?": ["MCDEWERKER: De ijsmachine wordt nu gerepareerd, hij is al een volledige eeuw of langer kapot geweest", "MCDEWERKER: Dat kan u niet besteld hebben, de machine is al 99.99999999999 jaar stuk", "Wees geduldig beste klant, we doen ons best, u hoeft nog maar drieduizend jaar te wachten, dan is de ijsmachine weer gerepareerd."],
   "Ik ben zo boos! Jullie moeten sluiten! Nu meteen!": ["MCDEWERKER: Oh nee he, niet weer zo'n karen...", "MCDEWERKER: Wat is er mis?", "MCDEWERKER: Vertel eens, waarom uit u ineens zo'n haat naar ons?"],
   "Mijn kind had hier kipnuggets vandaan gehaald en toen m'n lieve kindje die gisteren at werd het arme kind ziek! Hier is het bonnetje voor bewijs!": ["MCDEWERKER: Daar kunnen wij echt niets aan doen, kijk goed, die kipnuggets zijn van vijf jaar geleden.", "MCDEWERKER: Oke, dit kan me niks schelen, veel plezier met een ziek kind en verbannen zijn uit de McDonald's.", "MCDEWERKER: Nou hier zijn wat medicijnen, hopelijk wordt uw kind beter."],
   "Ik heb een klacht!": ["MCDEWERKER: Wat is uw klacht?", "MCDEWERKER: Nee, u hebt geen klacht maar u hebt wel toestemming om uit te glijden en in de modder te vallen."],
   "Ik haat jullie!": ["MCDEWERKER: Dat kan ons niks schelen, u bent toch lelijk.", "MCDEWERKER: BOEIE! Als u niet meer komt hoeven wij uw oorverdovende piepstem niet meer te horen, u lijkt wel een krijsende baby"],
   "Doe eens even normaal": ["MCDEWERKER: Het spijt me, ik moet inderdaad even normaal doen.", "MCDEWERKER: Oke, ik ga normaal doen.", "MCDEWERKER: Prima, ik doe normaal!!!!!"],
-  "Wat zit er in de happy meal": [ mcdonalds_happymeal_jewerly()]
+  "Wat zit er in de happy meal?": [ mcdonalds_happymeal_jewerly()],
+  "Waarom mag ik geen ijsje bestellen?": ["MCDEWERKER: Omdat de ijsmachine kapot is, ga maar weg, de McDonald's sluit nu tijdelijk omdat alle Mcdewerkers naar de begrafenis gaan van onze geliefde en gewaardeerde ijsmachine, on"]
 }
 
 

@@ -27,8 +27,6 @@ patterns = {
    "Ik weet niet of ik hier nog eens kom, mijn ervaring was redelijk (.*).":"MCDEWERKER: Oh, oke, bedankt voor het komen, al was het {}",
    "Dit bedrijf is erg (.*)!":"MCDEWERKER: Vindt u ons bedrijf echt zo {}?",
    "Ik haat deze plek want (.*)!":"MCDEWERKER: Alleen omdat {}?!",
-   "Ik hou van deze plek want (.*)!":"MCDEWERKER: Dankuwel, wij zullen het altijd onthouden dat u onze McDonald's geweldig vindt vanwege iets als {}",
-   "Verkopen jullie (.*)?":"MCDEWERKER: Ja wij verkopen {}",
    "Gekke vraag maar hebben jullie (.*)?":"MCDEWERKER: Nee natuurlijk hebben wij geen {}",
    "Ik wil nu meteen gratis (.*)!":"MCDEWERKER: Het spijt me, u kan niet zomaar binnenstormen en gratis {} eisen"
 
@@ -53,7 +51,7 @@ answers = {
   "Doe eens even normaal": ["MCDEWERKER: Het spijt me, ik moet inderdaad even normaal doen.", "MCDEWERKER: Oke, ik ga normaal doen.", "MCDEWERKER: Prima, ik doe normaal!!!!!"],
   "Wat zit er in de happy meal?": [ mcdonalds_happymeal_jewerly()],
   "Waarom mag ik geen ijsje bestellen?": ["MCDEWERKER: Omdat de ijsmachine kapot is, ga maar weg, de McDonald's sluit nu tijdelijk omdat alle Mcdewerkers naar de begrafenis gaan van onze geliefde en gewaardeerde ijsmachine, ondanks dat we hem nooit wilden helpen beter te worden.", "MCDEWERKER: Uhh onze ijsmachine wordt momenteel een beetje verwaarloosd, hij wordt mishandeld en kapot gemaakt.", "MCDEWERKER: Wij geven niks om onze ijdsmachine en hebben hem mishandeld tot hij kapot ging.", "MCDEWERKER: Arme ijsmachine, hij is al sinds de oertijd kapot en wordt nooit meer gerepareerd want daar hebben wij geen budget voor en we gaan het niet zelf doen."],
-  "Sinds wanneer is de ijsmachine kapot?": ["MCDEWERKER: Nog voor de Big Bang was onze ijsmachine aan het zweven en kromp in elkaar, wij wilden hem genezen maar het was te laat, door de Big Bang ontplofte hij en wij overleefden het.", "MCDEWERKER: Sinds hij gem"],
+  "Sinds wanneer is de ijsmachine kapot?": ["MCDEWERKER: Nog voor de Big Bang was onze ijsmachine aan het zweven en kromp in elkaar, wij wilden hem genezen maar het was te laat, door de Big Bang ontplofte hij en wij overleefden het.", "MCDEWERKER: Sinds hij gemaakt was, hij is een beetje misvormd.", "MCDEWERKER: Nou beste klant, nog voordat er ook maar iets bestond! Nog voordat er ook maar iets als de big bang kon komen, toen ging onze ijsmachine kapot."],
 }
 
 def get_answer(question): 

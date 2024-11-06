@@ -10,26 +10,32 @@ def mcdonalds_happymeal_jewerly():
   result = json.loads(response.read())
   
   result = result[0]
-  print(result)
+
   happymeal_jewerly= result["title"]
+  return happymeal_jewerly
 
 
-mcdonalds_happymeal_jewerly()
 
 
-patronen = { 
-   "Ik heb een vraag over (.*)":"MCDEWERKER: Oke!, je hebt een vraag over {}", 
-   "Ik vind de McDonalds(.*)":"MCDEWERKER: Dus je vind de McDonalds {}?",
-   "Ik heb een klacht over(.*)":"MCDEWERKER: Je hebt dus een klacht over {}?",
-   "Ik vind het eten(.*)":"MCDEWERKER: Dus je vind het eten {}?",
-   "Het ruikt hier naar (.*)":"MCDEWERKER: Ja? Ik ruik niet echt de geur van {}",
-   "Jullie maken alles te (.*)":"MCDEWERKER: Oh echt? Dat is dan alleen uw mening, ik vind het niet zo {}",
-   "Ik weet niet of ik hier nog eens kom, mijn ervaring was redelijk (.*)":"MCDEWERKER: Oh, oke, bedankt voor het komen, al was het {}"
+patterns = { 
+   "Ik heb een vraag over (.*).":"MCDEWERKER: Oke!, je hebt een vraag over {}", 
+   "Ik vind de McDonalds(.*)!":"MCDEWERKER: Dus je vind de McDonalds {}?",
+   "Ik heb een klacht over(.*)!":"MCDEWERKER: Je hebt dus een klacht over {}?",
+   "Ik vind het eten(.*)!":"MCDEWERKER: Dus je vind het eten {}?",
+   "Het ruikt hier naar (.*)!":"MCDEWERKER: Ja? Ik ruik niet echt de geur van {}",
+   "Jullie maken alles te (.*)!":"MCDEWERKER: Oh echt? Dat is dan alleen uw mening, ik vind het niet zo {}",
+   "Ik weet niet of ik hier nog eens kom, mijn ervaring was redelijk (.*).":"MCDEWERKER: Oh, oke, bedankt voor het komen, al was het {}",
+   "Dit bedrijf is erg (.*)!":"MCDEWERKER: Vindt u ons bedrijf echt zo {}?",
+   "Ik haat deze plek want (.*)!":"MCDEWERKER: Alleen vanwege {}?!",
+   "Ik hou van deze plek want (.*)!":"MCDEWERKER: Dankuwel, wij zullen het altijd onthouden dat u onze McDonald's geweldig vindt vanwege iets als {}",
+   "Verkopen jullie (.*)?":"MCDEWERKER: Ja wij verkopen {}",
+   "Gekke vraag maar hebben jullie (.*)?":"MCDEWERKER: Nee natuurlijk hebben wij geen {}",
+   "Ik wil nu meteen gratis (.*)!":"MCDEWERKER: Het spijt me, u kan niet zomaar binnenstormen en gratis {} eisen"
 
 }
 
 
-antwoorden = {
+answers = {
   "Hallo": ["MCDEWERKER: Hallo, waarvoor komt u?", "MCDEWERKER: Hoi!, hoe gaat het?", "MCDEWERKER: Hallo, hoe kan ik je helpen?"],
   "Hey, mag ik gratis eten?": ["MCDEWERKER: NEE! Waarom zou dat wel mogen?", "MCDEWERKER: Nee sorry, gewoon betalen!", "MCDEWERKER: Nope! Absoluut niet! Betalen! En achteraan sluiten, ik zag u de rij skippen!"],
   "Hoe gaat het?": ["MCDEWERKER: Het gaat goed, bedankt!", "MCDEWERKER: Het gaat prima, met jou?", "MCDEWERKER: Goed hoor"],
@@ -45,35 +51,35 @@ antwoorden = {
   "Ik heb een klacht!": ["MCDEWERKER: Wat is uw klacht?", "MCDEWERKER: Nee, u hebt geen klacht maar u hebt wel toestemming om uit te glijden en in de modder te vallen."],
   "Ik haat jullie!": ["MCDEWERKER: Dat kan ons niks schelen, u bent toch lelijk.", "MCDEWERKER: BOEIE! Als u niet meer komt hoeven wij uw oorverdovende piepstem niet meer te horen, u lijkt wel een krijsende baby"],
   "Doe eens even normaal": ["MCDEWERKER: Het spijt me, ik moet inderdaad even normaal doen.", "MCDEWERKER: Oke, ik ga normaal doen.", "MCDEWERKER: Prima, ik doe normaal!!!!!"],
-  
+  "Wat zit er in de happy meal": [ mcdonalds_happymeal_jewerly()]
 }
 
 
-def krijg_antwoord(vraag): 
-  if vraag in antwoorden: 
+def get_answer(question): 
+  if question in answers: 
       time.sleep(random.randint(1, 3))
-      return antwoorden[vraag] 
+      return answers[question] 
   else: 
       time.sleep(random.randint(1, 3))
-      return "IK hoor je, je zei: " + vraag 
+      return "IK hoor je, je zei: " + question 
 
 
 
-def krijg_antwoord_patroon(bericht):
+def proces_answer(message):
    
     time.sleep(random.randint(1, 3))
-    for patroon in patronen: 
-        match = re.search(patroon,bericht) 
+    for pattern in patterns: 
+        match = re.search(pattern,message) 
         if match: 
-            return patronen[patroon].format(match.group(1))
+            return patterns[pattern].format(match.group(1))
     
-    if bericht in antwoorden: 
-        return random.choice(antwoorden[bericht])
+    if message in answers: 
+        return random.choice(answers[message])
     else: 
-        return "MCDEWERKER: Ik hoor je, je zei: " + bericht 
+        return "MCDEWERKER: Ik hoor je, je zei: " + message 
   
       
 while True:
-  bericht = input("YOU: ")
-  antwoord = krijg_antwoord_patroon(bericht)
-  print("Bot: " + antwoord)
+  message = input("YOU: ")
+  answer = proces_answer(message)
+  print("Bot: " + answer)
